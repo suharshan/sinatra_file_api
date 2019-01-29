@@ -4,7 +4,7 @@
 
 - docker 18.03.0 or higher
 - docker-compose 1.21.0 or higher
-- ruby 2.2
+- ruby 2.4
 
 ## Steps
 
@@ -20,17 +20,17 @@ docker-compose up --build
 
 3. Open new terminal, start usinng the API
 ```bash
-$ curl http://localhost:9393/help
+$ curl http://localhost:8080/help
 
 Upload file
 -----------
-curl -X POST -F "file=@sample.png" http://<server ip>:9393/files
+curl -X POST -F "file=@sample.png" http://<server ip>:8080/files
 
 Retirieve file
 --------------
-curl http://<server ip>:9393/files/sample.png
+curl http://<server ip>:8080/files/sample.png
 
 Delete file
 -----------
-curl -X DELETE http://<server ip>:9393/files/sample.png
+curl -X DELETE http://<server ip>:8080/files/sample.png
 ```
