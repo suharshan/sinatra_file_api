@@ -9,20 +9,19 @@ class APIController < Sinatra::Base
 	# Display help
 	['/', '/help'].each do |route|
  		get route do
-			output =<<EOS
-Upload file
------------
-curl -X POST -F \"file=@sample.png\" http://<server ip>:9393/files
+			output =<<-EOS.gsub(/^[ \t]+(?=\S)/, '')
+				Upload file
+				-----------
+				curl -X POST -F \"file=@sample.png\" http://<server ip>:8080/files
 
-Retirieve file
---------------
-curl http://<server ip>:9393/files/sample.png
+				Retirieve file
+				--------------
+				curl http://<server ip>:8080/files/sample.png
 
-Delete file
------------
-curl -X DELETE http://<server ip>:9393/files/sample.png
-
-EOS
+				Delete file
+				-----------
+				curl -X DELETE http://<server ip>:8080/files/sample.png
+			EOS
 			output
 		end
 	end

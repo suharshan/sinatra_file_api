@@ -25,7 +25,7 @@ class FileController < APIController
 			end
 
 			success("uploaded")
-    end
+	  end
   end
 
 	# Delete files
